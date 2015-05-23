@@ -14,20 +14,25 @@ def housing_density(units, land)
 end
 
 def dense_sparce
-    density = 0
-    sparsity = 99999999
+    pop_density = 0
+    # need to implement a more efficient way to check for lowest value
+    pop_sparsity = 99999999
+
+    house_density = 0
+    # need to implement a more efficient way to check for lowest value
+    house_sparsity = 99999999
 
     population_array.each do |stats|
         if stats > density || sparsity < stats
-            density = stats
-            sparsity = stats
+            pop_density = stats
+            pop_sparsity = stats
         end
     end
 
     housing_array.each do |stats|
         if stats > density || sparsity < stats
-            density = stats
-            sparsity = stats
+            house_density = stats
+            house_sparsity = stats
         end
     end
 
