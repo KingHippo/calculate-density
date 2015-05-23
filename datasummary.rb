@@ -23,14 +23,14 @@ def dense_sparce
     house_sparsity = 99999999
 
     population_array.each do |stats|
-        if stats > density || sparsity < stats
+        if stats > pop_density || pop_sparsity < stats
             pop_density = stats
             pop_sparsity = stats
         end
     end
 
     housing_array.each do |stats|
-        if stats > density || sparsity < stats
+        if stats > house_density || house_sparsity < stats
             house_density = stats
             house_sparsity = stats
         end
